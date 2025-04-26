@@ -1,0 +1,14 @@
+[
+  {
+    "company_name": "Example Corp",
+    "company_url": "https://example.com",
+    "requested_date": "2024-03-14T12:34:56.789Z",
+    "status": "pending"
+  },
+  {
+    "company_name": "tablespace",
+    "company_url": "www.tablespace.com",
+    "requested_date": "2025-04-20T21:26:53.300577",
+    "status": "pending"
+  }
+]

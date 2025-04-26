@@ -1,0 +1,828 @@
+[
+  {
+    "language_id": 700,
+    "language": "Abkhazian",
+    "iso_639_1": "ab",
+    "iso_639_2": "abk",
+    "iso_639_3": "abk"
+  },
+  {
+    "language_id": 701,
+    "language": "Afar",
+    "iso_639_1": "aa",
+    "iso_639_2": "aar",
+    "iso_639_3": "aar"
+  },
+  {
+    "language_id": 702,
+    "language": "Afrikaans",
+    "iso_639_1": "af",
+    "iso_639_2": "afr",
+    "iso_639_3": "afr"
+  },
+  {
+    "language_id": 703,
+    "language": "Akan",
+    "iso_639_1": "ak",
+    "iso_639_2": "aka",
+    "iso_639_3": "aka"
+  },
+  {
+    "language_id": 704,
+    "language": "Albanian",
+    "iso_639_1": "sq",
+    "iso_639_2": "sqi",
+    "iso_639_3": "sqi"
+  },
+  {
+    "language_id": 705,
+    "language": "Amharic",
+    "iso_639_1": "am",
+    "iso_639_2": "amh",
+    "iso_639_3": "amh"
+  },
+  {
+    "language_id": 706,
+    "language": "Arabic",
+    "iso_639_1": "ar",
+    "iso_639_2": "ara",
+    "iso_639_3": "ara"
+  },
+  {
+    "language_id": 707,
+    "language": "Aragonese",
+    "iso_639_1": "an",
+    "iso_639_2": "arg",
+    "iso_639_3": "arg"
+  },
+  {
+    "language_id": 708,
+    "language": "Armenian",
+    "iso_639_1": "hy",
+    "iso_639_2": "hye",
+    "iso_639_3": "hye"
+  },
+  {
+    "language_id": 709,
+    "language": "Assamese",
+    "iso_639_1": "as",
+    "iso_639_2": "asm",
+    "iso_639_3": "asm"
+  },
+  {
+    "language_id": 710,
+    "language": "Avaric",
+    "iso_639_1": "av",
+    "iso_639_2": "ava",
+    "iso_639_3": "ava"
+  },
+  {
+    "language_id": 711,
+    "language": "Avestan",
+    "iso_639_1": "ae",
+    "iso_639_2": "ave",
+    "iso_639_3": "ave"
+  },
+  {
+    "language_id": 712,
+    "language": "Aymara",
+    "iso_639_1": "ay",
+    "iso_639_2": "aym",
+    "iso_639_3": "aym"
+  },
+  {
+    "language_id": 713,
+    "language": "Azerbaijani",
+    "iso_639_1": "az",
+    "iso_639_2": "aze",
+    "iso_639_3": "aze"
+  },
+  {
+    "language_id": 714,
+    "language": "Bambara",
+    "iso_639_1": "bm",
+    "iso_639_2": "bam",
+    "iso_639_3": "bam"
+  },
+  {
+    "language_id": 715,
+    "language": "Bashkir",
+    "iso_639_1": "ba",
+    "iso_639_2": "bak",
+    "iso_639_3": "bak"
+  },
+  {
+    "language_id": 716,
+    "language": "Basque",
+    "iso_639_1": "eu",
+    "iso_639_2": "eus",
+    "iso_639_3": "eus"
+  },
+  {
+    "language_id": 717,
+    "language": "Belarusian",
+    "iso_639_1": "be",
+    "iso_639_2": "bel",
+    "iso_639_3": "bel"
+  },
+  {
+    "language_id": 718,
+    "language": "Bengali",
+    "iso_639_1": "bn",
+    "iso_639_2": "ben",
+    "iso_639_3": "ben"
+  },
+  {
+    "language_id": 719,
+    "language": "Bislama",
+    "iso_639_1": "bi",
+    "iso_639_2": "bis",
+    "iso_639_3": "bis"
+  },
+  {
+    "language_id": 720,
+    "language": "Bosnian",
+    "iso_639_1": "bs",
+    "iso_639_2": "bos",
+    "iso_639_3": "bos"
+  },
+  {
+    "language_id": 721,
+    "language": "Breton",
+    "iso_639_1": "br",
+    "iso_639_2": "bre",
+    "iso_639_3": "bre"
+  },
+  {
+    "language_id": 722,
+    "language": "Bulgarian",
+    "iso_639_1": "bg",
+    "iso_639_2": "bul",
+    "iso_639_3": "bul"
+  },
+  {
+    "language_id": 723,
+    "language": "Burmese",
+    "iso_639_1": "my",
+    "iso_639_2": "mya",
+    "iso_639_3": "mya"
+  },
+  {
+    "language_id": 724,
+    "language": "Catalan",
+    "iso_639_1": "ca",
+    "iso_639_2": "cat",
+    "iso_639_3": "cat"
+  },
+  {
+    "language_id": 725,
+    "language": "Chamorro",
+    "iso_639_1": "ch",
+    "iso_639_2": "cha",
+    "iso_639_3": "cha"
+  },
+  {
+    "language_id": 726,
+    "language": "Chechen",
+    "iso_639_1": "ce",
+    "iso_639_2": "che",
+    "iso_639_3": "che"
+  },
+  {
+    "language_id": 727,
+    "language": "Chichewa",
+    "iso_639_1": "ny",
+    "iso_639_2": "nya",
+    "iso_639_3": "nya"
+  },
+  {
+    "language_id": 728,
+    "language": "Chinese",
+    "iso_639_1": "zh",
+    "iso_639_2": "zho",
+    "iso_639_3": "zho"
+  },
+  {
+    "language_id": 729,
+    "language": "Chuvash",
+    "iso_639_1": "cv",
+    "iso_639_2": "chv",
+    "iso_639_3": "chv"
+  },
+  {
+    "language_id": 730,
+    "language": "Cornish",
+    "iso_639_1": "kw",
+    "iso_639_2": "cor",
+    "iso_639_3": "cor"
+  },
+  {
+    "language_id": 731,
+    "language": "Corsican",
+    "iso_639_1": "co",
+    "iso_639_2": "cos",
+    "iso_639_3": "cos"
+  },
+  {
+    "language_id": 732,
+    "language": "Cree",
+    "iso_639_1": "cr",
+    "iso_639_2": "cre",
+    "iso_639_3": "cre"
+  },
+  {
+    "language_id": 733,
+    "language": "Croatian",
+    "iso_639_1": "hr",
+    "iso_639_2": "hrv",
+    "iso_639_3": "hrv"
+  },
+  {
+    "language_id": 734,
+    "language": "Czech",
+    "iso_639_1": "cs",
+    "iso_639_2": "ces",
+    "iso_639_3": "ces"
+  },
+  {
+    "language_id": 735,
+    "language": "Danish",
+    "iso_639_1": "da",
+    "iso_639_2": "dan",
+    "iso_639_3": "dan"
+  },
+  {
+    "language_id": 736,
+    "language": "Divehi",
+    "iso_639_1": "dv",
+    "iso_639_2": "div",
+    "iso_639_3": "div"
+  },
+  {
+    "language_id": 737,
+    "language": "Dutch",
+    "iso_639_1": "nl",
+    "iso_639_2": "nld",
+    "iso_639_3": "nld"
+  },
+  {
+    "language_id": 738,
+    "language": "Dzongkha",
+    "iso_639_1": "dz",
+    "iso_639_2": "dzo",
+    "iso_639_3": "dzo"
+  },
+  {
+    "language_id": 739,
+    "language": "English",
+    "iso_639_1": "en",
+    "iso_639_2": "eng",
+    "iso_639_3": "eng"
+  },
+  {
+    "language_id": 740,
+    "language": "Esperanto",
+    "iso_639_1": "eo",
+    "iso_639_2": "epo",
+    "iso_639_3": "epo"
+  },
+  {
+    "language_id": 741,
+    "language": "Estonian",
+    "iso_639_1": "et",
+    "iso_639_2": "est",
+    "iso_639_3": "est"
+  },
+  {
+    "language_id": 742,
+    "language": "Ewe",
+    "iso_639_1": "ee",
+    "iso_639_2": "ewe",
+    "iso_639_3": "ewe"
+  },
+  {
+    "language_id": 743,
+    "language": "Faroese",
+    "iso_639_1": "fo",
+    "iso_639_2": "fao",
+    "iso_639_3": "fao"
+  },
+  {
+    "language_id": 744,
+    "language": "Fijian",
+    "iso_639_1": "fj",
+    "iso_639_2": "fij",
+    "iso_639_3": "fij"
+  },
+  {
+    "language_id": 745,
+    "language": "Finnish",
+    "iso_639_1": "fi",
+    "iso_639_2": "fin",
+    "iso_639_3": "fin"
+  },
+  {
+    "language_id": 746,
+    "language": "French",
+    "iso_639_1": "fr",
+    "iso_639_2": "fra",
+    "iso_639_3": "fra"
+  },
+  {
+    "language_id": 747,
+    "language": "Fula",
+    "iso_639_1": "ff",
+    "iso_639_2": "ful",
+    "iso_639_3": "ful"
+  },
+  {
+    "language_id": 748,
+    "language": "Galician",
+    "iso_639_1": "gl",
+    "iso_639_2": "glg",
+    "iso_639_3": "glg"
+  },
+  {
+    "language_id": 749,
+    "language": "Georgian",
+    "iso_639_1": "ka",
+    "iso_639_2": "kat",
+    "iso_639_3": "kat"
+  },
+  {
+    "language_id": 750,
+    "language": "German",
+    "iso_639_1": "de",
+    "iso_639_2": "deu",
+    "iso_639_3": "deu"
+  },
+  {
+    "language_id": 751,
+    "language": "Greek",
+    "iso_639_1": "el",
+    "iso_639_2": "ell",
+    "iso_639_3": "ell"
+  },
+  {
+    "language_id": 752,
+    "language": "Guarani",
+    "iso_639_1": "gn",
+    "iso_639_2": "grn",
+    "iso_639_3": "grn"
+  },
+  {
+    "language_id": 753,
+    "language": "Gujarati",
+    "iso_639_1": "gu",
+    "iso_639_2": "guj",
+    "iso_639_3": "guj"
+  },
+  {
+    "language_id": 754,
+    "language": "Haitian",
+    "iso_639_1": "ht",
+    "iso_639_2": "hat",
+    "iso_639_3": "hat"
+  },
+  {
+    "language_id": 755,
+    "language": "Hausa",
+    "iso_639_1": "ha",
+    "iso_639_2": "hau",
+    "iso_639_3": "hau"
+  },
+  {
+    "language_id": 756,
+    "language": "Hebrew",
+    "iso_639_1": "he",
+    "iso_639_2": "heb",
+    "iso_639_3": "heb"
+  },
+  {
+    "language_id": 757,
+    "language": "Herero",
+    "iso_639_1": "hz",
+    "iso_639_2": "her",
+    "iso_639_3": "her"
+  },
+  {
+    "language_id": 758,
+    "language": "Hindi",
+    "iso_639_1": "hi",
+    "iso_639_2": "hin",
+    "iso_639_3": "hin"
+  },
+  {
+    "language_id": 759,
+    "language": "Hiri Motu",
+    "iso_639_1": "ho",
+    "iso_639_2": "hmo",
+    "iso_639_3": "hmo"
+  },
+  {
+    "language_id": 760,
+    "language": "Hungarian",
+    "iso_639_1": "hu",
+    "iso_639_2": "hun",
+    "iso_639_3": "hun"
+  },
+  {
+    "language_id": 761,
+    "language": "Icelandic",
+    "iso_639_1": "is",
+    "iso_639_2": "isl",
+    "iso_639_3": "isl"
+  },
+  {
+    "language_id": 762,
+    "language": "Ido",
+    "iso_639_1": "io",
+    "iso_639_2": "ido",
+    "iso_639_3": "ido"
+  },
+  {
+    "language_id": 763,
+    "language": "Igbo",
+    "iso_639_1": "ig",
+    "iso_639_2": "ibo",
+    "iso_639_3": "ibo"
+  },
+  {
+    "language_id": 764,
+    "language": "Indonesian",
+    "iso_639_1": "id",
+    "iso_639_2": "ind",
+    "iso_639_3": "ind"
+  },
+  {
+    "language_id": 765,
+    "language": "Interlingua",
+    "iso_639_1": "ia",
+    "iso_639_2": "ina",
+    "iso_639_3": "ina"
+  },
+  {
+    "language_id": 766,
+    "language": "Interlingue",
+    "iso_639_1": "ie",
+    "iso_639_2": "ile",
+    "iso_639_3": "ile"
+  },
+  {
+    "language_id": 767,
+    "language": "Inuktitut",
+    "iso_639_1": "iu",
+    "iso_639_2": "iku",
+    "iso_639_3": "iku"
+  },
+  {
+    "language_id": 768,
+    "language": "Inupiaq",
+    "iso_639_1": "ik",
+    "iso_639_2": "ipk",
+    "iso_639_3": "ipk"
+  },
+  {
+    "language_id": 769,
+    "language": "Irish",
+    "iso_639_1": "ga",
+    "iso_639_2": "gle",
+    "iso_639_3": "gle"
+  },
+  {
+    "language_id": 770,
+    "language": "Italian",
+    "iso_639_1": "it",
+    "iso_639_2": "ita",
+    "iso_639_3": "ita"
+  },
+  {
+    "language_id": 771,
+    "language": "Japanese",
+    "iso_639_1": "ja",
+    "iso_639_2": "jpn",
+    "iso_639_3": "jpn"
+  },
+  {
+    "language_id": 772,
+    "language": "Javanese",
+    "iso_639_1": "jv",
+    "iso_639_2": "jav",
+    "iso_639_3": "jav"
+  },
+  {
+    "language_id": 773,
+    "language": "Kannada",
+    "iso_639_1": "kn",
+    "iso_639_2": "kan",
+    "iso_639_3": "kan"
+  },
+  {
+    "language_id": 774,
+    "language": "Kanuri",
+    "iso_639_1": "kr",
+    "iso_639_2": "kau",
+    "iso_639_3": "kau"
+  },
+  {
+    "language_id": 775,
+    "language": "Kashmiri",
+    "iso_639_1": "ks",
+    "iso_639_2": "kas",
+    "iso_639_3": "kas"
+  },
+  {
+    "language_id": 776,
+    "language": "Kazakh",
+    "iso_639_1": "kk",
+    "iso_639_2": "kaz",
+    "iso_639_3": "kaz"
+  },
+  {
+    "language_id": 777,
+    "language": "Khmer",
+    "iso_639_1": "km",
+    "iso_639_2": "khm",
+    "iso_639_3": "khm"
+  },
+  {
+    "language_id": 778,
+    "language": "Kikuyu",
+    "iso_639_1": "ki",
+    "iso_639_2": "kik",
+    "iso_639_3": "kik"
+  },
+  {
+    "language_id": 779,
+    "language": "Kinyarwanda",
+    "iso_639_1": "rw",
+    "iso_639_2": "kin",
+    "iso_639_3": "kin"
+  },
+  {
+    "language_id": 780,
+    "language": "Kyrgyz",
+    "iso_639_1": "ky",
+    "iso_639_2": "kir",
+    "iso_639_3": "kir"
+  },
+  {
+    "language_id": 781,
+    "language": "Komi",
+    "iso_639_1": "kv",
+    "iso_639_2": "kom",
+    "iso_639_3": "kom"
+  },
+  {
+    "language_id": 782,
+    "language": "Kongo",
+    "iso_639_1": "kg",
+    "iso_639_2": "kon",
+    "iso_639_3": "kon"
+  },
+  {
+    "language_id": 783,
+    "language": "Korean",
+    "iso_639_1": "ko",
+    "iso_639_2": "kor",
+    "iso_639_3": "kor"
+  },
+  {
+    "language_id": 784,
+    "language": "Kurdish",
+    "iso_639_1": "ku",
+    "iso_639_2": "kur",
+    "iso_639_3": "kur"
+  },
+  {
+    "language_id": 785,
+    "language": "Lao",
+    "iso_639_1": "lo",
+    "iso_639_2": "lao",
+    "iso_639_3": "lao"
+  },
+  {
+    "language_id": 786,
+    "language": "Latin",
+    "iso_639_1": "la",
+    "iso_639_2": "lat",
+    "iso_639_3": "lat"
+  },
+  {
+    "language_id": 787,
+    "language": "Latvian",
+    "iso_639_1": "lv",
+    "iso_639_2": "lav",
+    "iso_639_3": "lav"
+  },
+  {
+    "language_id": 788,
+    "language": "Lithuanian",
+    "iso_639_1": "lt",
+    "iso_639_2": "lit",
+    "iso_639_3": "lit"
+  },
+  {
+    "language_id": 789,
+    "language": "Luxembourgish",
+    "iso_639_1": "lb",
+    "iso_639_2": "ltz",
+    "iso_639_3": "ltz"
+  },
+  {
+    "language_id": 790,
+    "language": "Macedonian",
+    "iso_639_1": "mk",
+    "iso_639_2": "mkd",
+    "iso_639_3": "mkd"
+  },
+  {
+    "language_id": 791,
+    "language": "Malagasy",
+    "iso_639_1": "mg",
+    "iso_639_2": "mlg",
+    "iso_639_3": "mlg"
+  },
+  {
+    "language_id": 792,
+    "language": "Malay",
+    "iso_639_1": "ms",
+    "iso_639_2": "msa",
+    "iso_639_3": "msa"
+  },
+  {
+    "language_id": 793,
+    "language": "Malayalam",
+    "iso_639_1": "ml",
+    "iso_639_2": "mal",
+    "iso_639_3": "mal"
+  },
+  {
+    "language_id": 794,
+    "language": "Maltese",
+    "iso_639_1": "mt",
+    "iso_639_2": "mlt",
+    "iso_639_3": "mlt"
+  },
+  {
+    "language_id": 795,
+    "language": "Maori",
+    "iso_639_1": "mi",
+    "iso_639_2": "mri",
+    "iso_639_3": "mri"
+  },
+  {
+    "language_id": 796,
+    "language": "Marathi",
+    "iso_639_1": "mr",
+    "iso_639_2": "mar",
+    "iso_639_3": "mar"
+  },
+  {
+    "language_id": 797,
+    "language": "Mongolian",
+    "iso_639_1": "mn",
+    "iso_639_2": "mon",
+    "iso_639_3": "mon"
+  },
+  {
+    "language_id": 798,
+    "language": "Nepali",
+    "iso_639_1": "ne",
+    "iso_639_2": "nep",
+    "iso_639_3": "nep"
+  },
+  {
+    "language_id": 799,
+    "language": "Norwegian",
+    "iso_639_1": "no",
+    "iso_639_2": "nor",
+    "iso_639_3": "nor"
+  },
+  {
+    "language_id": 800,
+    "language": "Odia",
+    "iso_639_1": "or",
+    "iso_639_2": "ori",
+    "iso_639_3": "ori"
+  },
+  {
+    "language_id": 801,
+    "language": "Pashto",
+    "iso_639_1": "ps",
+    "iso_639_2": "pus",
+    "iso_639_3": "pus"
+  },
+  {
+    "language_id": 802,
+    "language": "Persian",
+    "iso_639_1": "fa",
+    "iso_639_2": "fas",
+    "iso_639_3": "fas"
+  },
+  {
+    "language_id": 803,
+    "language": "Polish",
+    "iso_639_1": "pl",
+    "iso_639_2": "pol",
+    "iso_639_3": "pol"
+  },
+  {
+    "language_id": 804,
+    "language": "Portuguese",
+    "iso_639_1": "pt",
+    "iso_639_2": "por",
+    "iso_639_3": "por"
+  },
+  {
+    "language_id": 805,
+    "language": "Punjabi",
+    "iso_639_1": "pa",
+    "iso_639_2": "pan",
+    "iso_639_3": "pan"
+  },
+  {
+    "language_id": 806,
+    "language": "Russian",
+    "iso_639_1": "ru",
+    "iso_639_2": "rus",
+    "iso_639_3": "rus"
+  },
+  {
+    "language_id": 807,
+    "language": "Sanskrit",
+    "iso_639_1": "sa",
+    "iso_639_2": "san",
+    "iso_639_3": "san"
+  },
+  {
+    "language_id": 808,
+    "language": "Sinhala",
+    "iso_639_1": "si",
+    "iso_639_2": "sin",
+    "iso_639_3": "sin"
+  },
+  {
+    "language_id": 809,
+    "language": "Spanish",
+    "iso_639_1": "es",
+    "iso_639_2": "spa",
+    "iso_639_3": "spa"
+  },
+  {
+    "language_id": 810,
+    "language": "Swedish",
+    "iso_639_1": "sv",
+    "iso_639_2": "swe",
+    "iso_639_3": "swe"
+  },
+  {
+    "language_id": 811,
+    "language": "Tamil",
+    "iso_639_1": "ta",
+    "iso_639_2": "tam",
+    "iso_639_3": "tam"
+  },
+  {
+    "language_id": 812,
+    "language": "Telugu",
+    "iso_639_1": "te",
+    "iso_639_2": "tel",
+    "iso_639_3": "tel"
+  },
+  {
+    "language_id": 813,
+    "language": "Thai",
+    "iso_639_1": "th",
+    "iso_639_2": "tha",
+    "iso_639_3": "tha"
+  },
+  {
+    "language_id": 814,
+    "language": "Turkish",
+    "iso_639_1": "tr",
+    "iso_639_2": "tur",
+    "iso_639_3": "tur"
+  },
+  {
+    "language_id": 815,
+    "language": "Ukrainian",
+    "iso_639_1": "uk",
+    "iso_639_2": "ukr",
+    "iso_639_3": "ukr"
+  },
+  {
+    "language_id": 816,
+    "language": "Urdu",
+    "iso_639_1": "ur",
+    "iso_639_2": "urd",
+    "iso_639_3": "urd"
+  },
+  {
+    "language_id": 817,
+    "language": "Vietnamese",
+    "iso_639_1": "vi",
+    "iso_639_2": "vie",
+    "iso_639_3": "vie"
+  }
+]

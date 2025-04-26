@@ -1,0 +1,190 @@
+[
+  {
+    "business_activity_id": 100,
+    "business_activity": "activist_shareholder"
+  },
+  {
+    "business_activity_id": 101,
+    "business_activity": "share_buyback"
+  },
+  {
+    "business_activity_id": 102,
+    "business_activity": "financial_misconduct"
+  },
+  {
+    "business_activity_id": 103,
+    "business_activity": "ipo"
+  },
+  {
+    "business_activity_id": 104,
+    "business_activity": "financial_performance"
+  },
+  {
+    "business_activity_id": 105,
+    "business_activity": "private_equity"
+  },
+  {
+    "business_activity_id": 106,
+    "business_activity": "bankruptcy"
+  },
+  {
+    "business_activity_id": 107,
+    "business_activity": "credit_rating"
+  },
+  {
+    "business_activity_id": 108,
+    "business_activity": "insider_trading"
+  },
+  {
+    "business_activity_id": 109,
+    "business_activity": "dividend"
+  },
+  {
+    "business_activity_id": 110,
+    "business_activity": "venture_capital"
+  },
+  {
+    "business_activity_id": 111,
+    "business_activity": "award"
+  },
+  {
+    "business_activity_id": 112,
+    "business_activity": "market_outreach_promotion"
+  },
+  {
+    "business_activity_id": 113,
+    "business_activity": "customer_engagement"
+  },
+  {
+    "business_activity_id": 114,
+    "business_activity": "rebranding"
+  },
+  {
+    "business_activity_id": 115,
+    "business_activity": "layoff"
+  },
+  {
+    "business_activity_id": 116,
+    "business_activity": "hiring"
+  },
+  {
+    "business_activity_id": 117,
+    "business_activity": "employee_program"
+  },
+  {
+    "business_activity_id": 118,
+    "business_activity": "new_product_rollout"
+  },
+  {
+    "business_activity_id": 119,
+    "business_activity": "product_retirement"
+  },
+  {
+    "business_activity_id": 120,
+    "business_activity": "product_recall"
+  },
+  {
+    "business_activity_id": 121,
+    "business_activity": "litigation"
+  },
+  {
+    "business_activity_id": 122,
+    "business_activity": "regulatory_enforcement"
+  },
+  {
+    "business_activity_id": 123,
+    "business_activity": "patent_filing"
+  },
+  {
+    "business_activity_id": 124,
+    "business_activity": "patent_litigation"
+  },
+  {
+    "business_activity_id": 125,
+    "business_activity": "compliance"
+  },
+  {
+    "business_activity_id": 126,
+    "business_activity": "cybersecurity_incident"
+  },
+  {
+    "business_activity_id": 127,
+    "business_activity": "negative_impact"
+  },
+  {
+    "business_activity_id": 128,
+    "business_activity": "data_breach"
+  },
+  {
+    "business_activity_id": 129,
+    "business_activity": "procurement_update"
+  },
+  {
+    "business_activity_id": 130,
+    "business_activity": "client_onboarding"
+  },
+  {
+    "business_activity_id": 131,
+    "business_activity": "pricing_update"
+  },
+  {
+    "business_activity_id": 132,
+    "business_activity": "merger_activity"
+  },
+  {
+    "business_activity_id": 133,
+    "business_activity": "R&D"
+  },
+  {
+    "business_activity_id": 134,
+    "business_activity": "partnership"
+  },
+  {
+    "business_activity_id": 136,
+    "business_activity": "business_expansion"
+  },
+  {
+    "business_activity_id": 137,
+    "business_activity": "capital_investment"
+  },
+  {
+    "business_activity_id": 138,
+    "business_activity": "corporate_restructuring"
+  },
+  {
+    "business_activity_id": 139,
+    "business_activity": "business_closure"
+  },
+  {
+    "business_activity_id": 140,
+    "business_activity": "leadership_change"
+  },
+  {
+    "business_activity_id": 141,
+    "business_activity": "supply_chain_operation"
+  },
+  {
+    "business_activity_id": 142,
+    "business_activity": "digital_innovation"
+  },
+  {
+    "business_activity_id": 143,
+    "business_activity": "facility_shutdown"
+  },
+  {
+    "business_activity_id": 144,
+    "business_activity": "facility_expansion"
+  },
+  {
+    "business_activity_id": 145,
+    "business_activity": "cost_optimization"
+  },
+  {
+    "business_activity_id": 146,
+    "business_activity": "performance_optimization"
+  },
+  {
+    "business_activity_id": 135,
+    "business_activity": "funding_activity"
+  }
+]

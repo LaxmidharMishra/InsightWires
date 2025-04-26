@@ -1,0 +1,490 @@
+[
+    {
+      "industry_name": "oil_and_gas_equipment_service",
+      "industry_id": 300
+    },
+    {
+      "industry_name": "integrated_oil_and_gas",
+      "industry_id": 301
+    },
+    {
+      "industry_name": "oil_and_gas_exploration",
+      "industry_id": 302
+    },
+    {
+      "industry_name": "oil_and_gas_refining_marketing",
+      "industry_id": 303
+    },
+    {
+      "industry_name": "oil_and_gas_storage_transportation",
+      "industry_id": 304
+    },
+    {
+      "industry_name": "coal_and_consumable_fuel",
+      "industry_id": 305
+    },
+    {
+      "industry_name": "commodity_chemical",
+      "industry_id": 306
+    },
+    {
+      "industry_name": "fertilizers_and_agricultural_chemical",
+      "industry_id": 307
+    },
+    {
+      "industry_name": "diversified_chemical",
+      "industry_id": 308
+    },
+    {
+      "industry_name": "industrial_gas",
+      "industry_id": 309
+    },
+    {
+      "industry_name": "specialty_chemical",
+      "industry_id": 310
+    },
+    {
+      "industry_name": "construction_material",
+      "industry_id": 311
+    },
+    {
+      "industry_name": "glass_and_plastic_container",
+      "industry_id": 312
+    },
+    {
+      "industry_name": "metal_container",
+      "industry_id": 313
+    },
+    {
+      "industry_name": "paper_and_plastic_packaging",
+      "industry_id": 314
+    },
+    {
+      "industry_name": "aluminum",
+      "industry_id": 315
+    },
+    {
+      "industry_name": "diversified_metals_and_Mining",
+      "industry_id": 316
+    },
+    {
+      "industry_name": "copper",
+      "industry_id": 317
+    },
+    {
+      "industry_name": "gold",
+      "industry_id": 318
+    },
+    {
+      "industry_name": "iron_and_steel",
+      "industry_id": 319
+    },
+    {
+      "industry_name": "precious_metal_and_mineral",
+      "industry_id": 320
+    },
+    {
+      "industry_name": "forest_product",
+      "industry_id": 321
+    },
+    {
+      "industry_name": "paper_products",
+      "industry_id": 322
+    },
+    {
+      "industry_name": "aerospace_and_defense",
+      "industry_id": 323
+    },
+    {
+      "industry_name": "building_products",
+      "industry_id": 324
+    },
+    {
+      "industry_name": "construction_and_engineering",
+      "industry_id": 325
+    },
+    {
+      "industry_name": "electrical_components_and_equipment",
+      "industry_id": 326
+    },
+    {
+      "industry_name": "heavy_electrical_equipment",
+      "industry_id": 327
+    },
+    {
+      "industry_name": "air_freight_and_logistic",
+      "industry_id": 328
+    },
+    {
+      "industry_name": "passenger_air_transportation",
+      "industry_id": 329
+    },
+    {
+      "industry_name": "marine_transportation",
+      "industry_id": 330
+    },
+    {
+      "industry_name": "rail_transportation",
+      "industry_id": 331
+    },
+    {
+      "industry_name": "cargo_ground_transportation",
+      "industry_id": 332
+    },
+    {
+      "industry_name": "passenger_ground_transportation",
+      "industry_id": 333
+    },
+    {
+      "industry_name": "airport_service",
+      "industry_id": 334
+    },
+    {
+      "industry_name": "highway_and_railtrack",
+      "industry_id": 335
+    },
+    {
+      "industry_name": "marine_ports_and_service",
+      "industry_id": 336
+    },
+    {
+      "industry_name": "automotive_parts_and_equipment",
+      "industry_id": 337
+    },
+    {
+      "industry_name": "tire_and_rubber",
+      "industry_id": 338
+    },
+    {
+      "industry_name": "autonomous_vehicle",
+      "industry_id": 339
+    },
+    {
+      "industry_name": "commercial_vehicle",
+      "industry_id": 340
+    },
+    {
+      "industry_name": "electric_vehicle",
+      "industry_id": 341
+    },
+    {
+      "industry_name": "passenger_vehicle",
+      "industry_id": 342
+    },
+    {
+      "industry_name": "two_and_three_wheeler",
+      "industry_id": 343
+    },
+    {
+      "industry_name": "consumer_electronics",
+      "industry_id": 344
+    },
+    {
+      "industry_name": "home_furnishing",
+      "industry_id": 345
+    },
+    {
+      "industry_name": "home_building",
+      "industry_id": 346
+    },
+    {
+      "industry_name": "household_appliance",
+      "industry_id": 347
+    },
+    {
+      "industry_name": "houseware_and_speciality",
+      "industry_id": 348
+    },
+    {
+      "industry_name": "leisure_products",
+      "industry_id": 349
+    },
+    {
+      "industry_name": "apparel_accessory_and_luxury_good",
+      "industry_id": 350
+    },
+    {
+      "industry_name": "footwear",
+      "industry_id": 351
+    },
+    {
+      "industry_name": "textile",
+      "industry_id": 352
+    },
+    {
+      "industry_name": "casino_and_gaming",
+      "industry_id": 353
+    },
+    {
+      "industry_name": "hotel_resort_and_cruise",
+      "industry_id": 354
+    },
+    {
+      "industry_name": "leisure_facility",
+      "industry_id": 355
+    },
+    {
+      "industry_name": "restaurant",
+      "industry_id": 356
+    },
+    {
+      "industry_name": "education_service",
+      "industry_id": 357
+    },
+    {
+      "industry_name": "specialized_consumer_service",
+      "industry_id": 358
+    },
+    {
+      "industry_name": "e_commerce",
+      "industry_id": 359
+    },
+    {
+      "industry_name": "multiline_retail",
+      "industry_id": 360
+    },
+    {
+      "industry_name": "specialty_retail",
+      "industry_id": 361
+    },
+    {
+      "industry_name": "brewer",
+      "industry_id": 362
+    },
+    {
+      "industry_name": "distiller_and_Vintner",
+      "industry_id": 363
+    },
+    {
+      "industry_name": "soft_drink",
+      "industry_id": 364
+    },
+    {
+      "industry_name": "agricultural_product_and_Service",
+      "industry_id": 365
+    },
+    {
+      "industry_name": "packaged_food_and_Meat",
+      "industry_id": 366
+    },
+    {
+      "industry_name": "tobacco",
+      "industry_id": 367
+    },
+    {
+      "industry_name": "household_product",
+      "industry_id": 368
+    },
+    {
+      "industry_name": "personal_care_product",
+      "industry_id": 369
+    },
+    {
+      "industry_name": "health_care_equipment",
+      "industry_id": 370
+    },
+    {
+      "industry_name": "health_care_supply",
+      "industry_id": 371
+    },
+    {
+      "industry_name": "health_care_service",
+      "industry_id": 372
+    },
+    {
+      "industry_name": "health_care_facility",
+      "industry_id": 373
+    },
+    {
+      "industry_name": "managed_health_care",
+      "industry_id": 374
+    },
+    {
+      "industry_name": "health_care_technology",
+      "industry_id": 375
+    },
+    {
+      "industry_name": "biotechnology",
+      "industry_id": 376
+    },
+    {
+      "industry_name": "pharmaceutical",
+      "industry_id": 377
+    },
+    {
+      "industry_name": "life_sciences_tool",
+      "industry_id": 378
+    },
+    {
+      "industry_name": "diversified_bank",
+      "industry_id": 379
+    },
+    {
+      "industry_name": "regional_bank",
+      "industry_id": 380
+    },
+    {
+      "industry_name": "diversified_financial_service",
+      "industry_id": 381
+    },
+    {
+      "industry_name": "commercial_and_residential_mortgage",
+      "industry_id": 382
+    },
+    {
+      "industry_name": "transaction_and_payment_service",
+      "industry_id": 383
+    },
+    {
+      "industry_name": "consumer_finance",
+      "industry_id": 384
+    },
+    {
+      "industry_name": "asset_management",
+      "industry_id": 385
+    },
+    {
+      "industry_name": "investment_banking",
+      "industry_id": 386
+    },
+    {
+      "industry_name": "financial_exchange",
+      "industry_id": 387
+    },
+    {
+      "industry_name": "reit",
+      "industry_id": 388
+    },
+    {
+      "industry_name": "life_and_health_insurance",
+      "industry_id": 389
+    },
+    {
+      "industry_name": "multiline_insurance",
+      "industry_id": 390
+    },
+    {
+      "industry_name": "property_and_casualty_insurance",
+      "industry_id": 391
+    },
+    {
+      "industry_name": "reinsurance",
+      "industry_id": 392
+    },
+    {
+      "industry_name": "insurance_broker",
+      "industry_id": 393
+    },
+    {
+      "industry_name": "it_consulting",
+      "industry_id": 394
+    },
+    {
+      "industry_name": "internet_services",
+      "industry_id": 395
+    },
+    {
+      "industry_name": "application_software",
+      "industry_id": 396
+    },
+    {
+      "industry_name": "system_software",
+      "industry_id": 397
+    },
+    {
+      "industry_name": "communication_equipment",
+      "industry_id": 398
+    },
+    {
+      "industry_name": "technology_hardware_equipment",
+      "industry_id": 399
+    },
+    {
+      "industry_name": "electronic_equipment",
+      "industry_id": 400
+    },
+    {
+      "industry_name": "electronic_component",
+      "industry_id": 401
+    },
+    {
+      "industry_name": "semiconductor_manufacturer",
+      "industry_id": 402
+    },
+    {
+      "industry_name": "semiconductor_equipment",
+      "industry_id": 403
+    },
+    {
+      "industry_name": "advertising",
+      "industry_id": 404
+    },
+    {
+      "industry_name": "broadcasting",
+      "industry_id": 405
+    },
+    {
+      "industry_name": "cable_and_satellite",
+      "industry_id": 406
+    },
+    {
+      "industry_name": "publishing",
+      "industry_id": 407
+    },
+    {
+      "industry_name": "movies_and_entertainment",
+      "industry_id": 408
+    },
+    {
+      "industry_name": "interactive_home_entertainment",
+      "industry_id": 409
+    },
+    {
+      "industry_name": "interactive_media_and_service",
+      "industry_id": 410
+    },
+    {
+      "industry_name": "real_estate_operating_companie",
+      "industry_id": 411
+    },
+    {
+      "industry_name": "real_estate_development",
+      "industry_id": 412
+    },
+    {
+      "industry_name": "real_estate_service",
+      "industry_id": 413
+    },
+    {
+      "industry_name": "alternative_carrier",
+      "industry_id": 414
+    },
+    {
+      "industry_name": "integrated_telecommunication_service",
+      "industry_id": 415
+    },
+    {
+      "industry_name": "wireless_telecommunication_service",
+      "industry_id": 416
+    },
+    {
+      "industry_name": "electric_utility",
+      "industry_id": 417
+    },
+    {
+      "industry_name": "gas_utility",
+      "industry_id": 418
+    },
+    {
+      "industry_name": "water_utility",
+      "industry_id": 419
+    },
+    {
+      "industry_name": "independent_power_and_energy_trader",
+      "industry_id": 420
+    },
+    {
+      "industry_name": "renewable_electricity",
+      "industry_id": 421
+    }
+  ]
