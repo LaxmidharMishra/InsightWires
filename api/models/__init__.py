@@ -4,7 +4,7 @@ from .industries_taxonomy import IndustriesTaxonomy
 from .language_taxonomy import LanguageTaxonomy
 from .locations_taxonomy import LocationsTaxonomy
 from .sources_taxonomy import SourcesTaxonomy
-from .news_metadata import NewsMetadata
+from .insightwire import InsightWire
 from .themes_taxonomy import ThemesTaxonomy
 from .topics_taxonomy import TopicsTaxonomy
 from .custom_topics_taxonomy import CustomTopicsTaxonomy
