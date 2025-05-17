@@ -61,6 +61,11 @@ app = FastAPI(
 # Mount static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# Add health check endpoint
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html():
     html_content = f"""
