@@ -92,6 +92,85 @@ async def custom_swagger_ui_html():
             .swagger-ui .topbar {{
                 display: none;
             }}
+
+            /* Style the operation blocks */
+            .swagger-ui .opblock {{
+                margin: 0 0 15px;
+                border: 1px solid #e8e8e8;
+                border-radius: 4px;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            }}
+
+            .swagger-ui .opblock .opblock-summary {{
+                padding: 8px;
+                cursor: pointer;
+            }}
+
+            .swagger-ui .opblock .opblock-summary-method {{
+                background: #2c5282;
+                border-color: #2c5282;
+                padding: 6px 10px;
+                border-radius: 3px;
+                color: white;
+                font-weight: bold;
+            }}
+
+            /* Show the operation content by default */
+            .swagger-ui .opblock .opblock-summary + div {{
+                display: block !important;
+                padding: 15px;
+            }}
+
+            /* Style the Execute button */
+            .swagger-ui .execute-wrapper {{
+                margin-top: 15px;
+            }}
+
+            .swagger-ui .execute-wrapper button {{
+                background: #2c5282 !important;
+                border-color: #2c5282 !important;
+                color: white !important;
+                padding: 8px 20px !important;
+                border-radius: 4px !important;
+                font-weight: bold !important;
+            }}
+
+            .swagger-ui .execute-wrapper button:hover {{
+                background: #1a365d !important;
+                border-color: #1a365d !important;
+            }}
+
+            /* Style the parameters section */
+            .swagger-ui .parameters-container {{
+                margin: 15px 0;
+            }}
+
+            .swagger-ui .parameters-container .parameters {{
+                margin: 0;
+                padding: 0;
+            }}
+
+            .swagger-ui .parameters-container .parameter {{
+                margin: 0 0 10px;
+                padding: 10px;
+                border: 1px solid #e8e8e8;
+                border-radius: 4px;
+            }}
+
+            /* Style the response section */
+            .swagger-ui .responses-wrapper {{
+                margin-top: 15px;
+            }}
+
+            .swagger-ui .responses-table {{
+                margin: 0;
+            }}
+
+            .swagger-ui .responses-table .response {{
+                padding: 10px;
+                border: 1px solid #e8e8e8;
+                border-radius: 4px;
+            }}
         </style>
     </head>
     <body>
@@ -116,7 +195,20 @@ async def custom_swagger_ui_html():
                     defaultModelsExpandDepth: -1,
                     defaultModelExpandDepth: 1,
                     showExtensions: false,
-                    showCommonExtensions: false
+                    showCommonExtensions: false,
+                    supportedSubmitMethods: ["get", "post", "put", "delete", "patch"],
+                    tryItOutEnabled: true,
+                    onComplete: function() {{
+                        // Auto-expand all operations
+                        document.querySelectorAll('.opblock').forEach(function(opblock) {{
+                            opblock.classList.add('is-open');
+                            // Enable try it out by default
+                            const tryOutBtn = opblock.querySelector('.try-out');
+                            if (tryOutBtn) {{
+                                tryOutBtn.click();
+                            }}
+                        }});
+                    }}
                 }})
             }}
         </script>

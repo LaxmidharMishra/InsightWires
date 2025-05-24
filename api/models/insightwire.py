@@ -9,12 +9,10 @@ Base = declarative_base()
 class InsightWire(Base):
     __tablename__ = "insightwire"
     uuid = Column(UUID(as_uuid=True), primary_key=True, nullable=False)
-    rss_id = Column(Integer)
     title = Column(Text)
     lead_paragraph = Column(Text)
     news_url = Column(Text)
     published_date = Column(Text)
-    custom_topics = Column(Text)
     sentiment = Column(Text)
     type_of_source = Column(Text)
     type_of_content = Column(Text)

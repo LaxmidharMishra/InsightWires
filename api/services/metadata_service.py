@@ -5,9 +5,10 @@ from sqlalchemy.future import select
 from sqlalchemy import func, join, and_
 from typing import Optional, Type, Any, Dict
 from api.core.cache import cache_response
-from api.models import InsightWire, IndustryMapping, BusinessActivityMapping, CompanyMapping, ContentTypeMapping, LocationMapping, SentimentMapping, SourceTypeMapping  
+from api.models import InsightWire, IndustryMapping, BusinessActivityMapping, CompanyMapping, ContentTypeMapping, LocationMapping, SentimentMapping, SourceTypeMapping   
 from sqlalchemy import String, Integer, DateTime
 from fastapi import HTTPException
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -47,6 +48,7 @@ class MetadataService:
             'location_id', 'location_ids',
             'source_type_id', 'source_type_ids',
             'sentiment_type_id', 'sentiment_type_ids',
+            'start_date', 'end_date',
             'page', 'limit'
         ])
 
@@ -77,12 +79,39 @@ class MetadataService:
         except ValueError:
             return False, f"Invalid {filter_name}. Must be a valid integer."
 
+    def _standardize_response_schema(self, data: list) -> list:
+        """
+        Standardize the order of fields in the response data
+        """
+        standardized_data = []
+        for item in data:
+            # Define the order of fields and access them as attributes
+            ordered_item = {
+                "story_id": getattr(item, "uuid", None),  # Map uuid to story_id
+                "title": getattr(item, "title", None),
+                "lead_paragraph": getattr(item, "lead_paragraph", None),
+                "story": getattr(item, "story", None),
+                "published_date": getattr(item, "published_date", None),
+                "news_url": getattr(item, "news_url", None),
+                "image_url": getattr(item, "image_url", None),
+                "type_of_content": getattr(item, "type_of_content", None),
+                "type_of_source": getattr(item, "type_of_source", None),
+                "sources": getattr(item, "sources", None),
+                "locations": getattr(item, "locations", None),
+                "content_languages": getattr(item, "content_languages", None),
+                "sentiment": getattr(item, "sentiment", None)
+            }
+            # Remove None values
+            ordered_item = {k: v for k, v in ordered_item.items() if v is not None}
+            standardized_data.append(ordered_item)
+        return standardized_data
+
     async def paginate_query(self, stmt, page: int, limit: int):
+        # Ensure page and limit are positive
+        page = max(1, page)  # Ensure page is at least 1
+        limit = max(1, min(100, limit))  # Ensure limit is between 1 and 100
+        
         try:
-            # Ensure page and limit are positive
-            page = max(1, page)  # Ensure page is at least 1
-            limit = max(1, min(100, limit))  # Ensure limit is between 1 and 100
-            
             # Get total count
             count_stmt = select(func.count()).select_from(stmt.subquery())
             total_count = await self.db.scalar(count_stmt)
@@ -117,6 +146,9 @@ class MetadataService:
             offset_stmt = stmt.offset(offset).limit(limit)
             results = await self.db.scalars(offset_stmt)
             records = results.all()
+            
+            # Standardize the response schema
+            standardized_data = self._standardize_response_schema(records)
 
             return {
                 "total_count": total_count,
@@ -124,7 +156,7 @@ class MetadataService:
                 "limit": limit,
                 "prev_page": page - 1 if page > 1 else None,
                 "next_page": page + 1 if (page * limit) < total_count else None,
-                "data": records,
+                "data": standardized_data,
                 "message": f"Found {total_count} records"
             }
         except Exception as e:
@@ -207,7 +239,7 @@ class MetadataService:
                     "prev_page": None,
                     "next_page": None,
                     "data": [],
-                    "message": "At least one filter parameter is required. Valid filters are: company_id(s), business_activity_id(s), content_type_id(s), industry_type_id(s), location_id(s), source_type_id(s), sentiment_type_id(s)"
+                    "message": "At least one filter parameter is required. Valid filters are: company_id(s), business_activity_id(s), content_type_id(s), industry_type_id(s), location_id(s), source_type_id(s), sentiment_type_id(s), start_date, end_date"
                 }
 
             # Validate filter values first
@@ -231,6 +263,10 @@ class MetadataService:
             # Start with base query
             stmt = select(InsightWire)
 
+            # Apply date filtering
+            start_date = kwargs.get('start_date')
+            end_date = kwargs.get('end_date')
+            
             # Track joined tables to avoid duplicate joins
             joined_tables = set()
             
@@ -241,6 +277,38 @@ class MetadataService:
                     stmt = stmt.join(BusinessActivityMapping, InsightWire.uuid == BusinessActivityMapping.insightwire_uuid)
                     joined_tables.add('business_activity_mapping')
                 stmt = stmt.filter(BusinessActivityMapping.business_activity_id == value)
+                
+                # Apply date filter on business activity mapping
+                if start_date:
+                    try:
+                        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+                        stmt = stmt.filter(BusinessActivityMapping.system_timestamp >= start_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid start_date format. Please use YYYY-MM-DD format."
+                        }
+                
+                if end_date:
+                    try:
+                        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date = end_date.replace(hour=23, minute=59, second=59)
+                        stmt = stmt.filter(BusinessActivityMapping.system_timestamp <= end_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid end_date format. Please use YYYY-MM-DD format."
+                        }
             
             # Handle company_id filter
             if kwargs.get('company_id') or kwargs.get('company_ids'):
@@ -250,6 +318,38 @@ class MetadataService:
                     joined_tables.add('company_mapping')
                 stmt = stmt.filter(CompanyMapping.company_id == value)
                 
+                # Apply date filter on company mapping
+                if start_date:
+                    try:
+                        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+                        stmt = stmt.filter(CompanyMapping.system_timestamp >= start_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid start_date format. Please use YYYY-MM-DD format."
+                        }
+                
+                if end_date:
+                    try:
+                        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date = end_date.replace(hour=23, minute=59, second=59)
+                        stmt = stmt.filter(CompanyMapping.system_timestamp <= end_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid end_date format. Please use YYYY-MM-DD format."
+                        }
+                
             # Handle content_type_id filter
             if kwargs.get('content_type_id') or kwargs.get('content_type_ids'):
                 value = kwargs.get('content_type_id') or kwargs.get('content_type_ids')
@@ -257,6 +357,38 @@ class MetadataService:
                     stmt = stmt.join(ContentTypeMapping, InsightWire.uuid == ContentTypeMapping.insightwire_uuid)
                     joined_tables.add('content_type_mapping')
                 stmt = stmt.filter(ContentTypeMapping.content_type_id == value)
+                
+                # Apply date filter on content type mapping
+                if start_date:
+                    try:
+                        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+                        stmt = stmt.filter(ContentTypeMapping.system_timestamp >= start_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid start_date format. Please use YYYY-MM-DD format."
+                        }
+                
+                if end_date:
+                    try:
+                        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date = end_date.replace(hour=23, minute=59, second=59)
+                        stmt = stmt.filter(ContentTypeMapping.system_timestamp <= end_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid end_date format. Please use YYYY-MM-DD format."
+                        }
             
             # Handle industry_type_id filter
             if kwargs.get('industry_type_id') or kwargs.get('industry_type_ids'):
@@ -265,6 +397,38 @@ class MetadataService:
                     stmt = stmt.join(IndustryMapping, InsightWire.uuid == IndustryMapping.insightwire_uuid)
                     joined_tables.add('industry_mapping')
                 stmt = stmt.filter(IndustryMapping.industry_type_id == value)
+                
+                # Apply date filter on industry mapping
+                if start_date:
+                    try:
+                        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+                        stmt = stmt.filter(IndustryMapping.system_timestamp >= start_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid start_date format. Please use YYYY-MM-DD format."
+                        }
+                
+                if end_date:
+                    try:
+                        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date = end_date.replace(hour=23, minute=59, second=59)
+                        stmt = stmt.filter(IndustryMapping.system_timestamp <= end_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid end_date format. Please use YYYY-MM-DD format."
+                        }
             
             # Handle location_id filter
             if kwargs.get('location_id') or kwargs.get('location_ids'):
@@ -272,7 +436,39 @@ class MetadataService:
                 if 'location_mapping' not in joined_tables:
                     stmt = stmt.join(LocationMapping, InsightWire.uuid == LocationMapping.insightwire_uuid)
                     joined_tables.add('location_mapping')
-                stmt = stmt.filter(LocationMapping.location_id == value)            
+                stmt = stmt.filter(LocationMapping.location_id == value)
+                
+                # Apply date filter on location mapping
+                if start_date:
+                    try:
+                        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+                        stmt = stmt.filter(LocationMapping.system_timestamp >= start_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid start_date format. Please use YYYY-MM-DD format."
+                        }
+                
+                if end_date:
+                    try:
+                        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date = end_date.replace(hour=23, minute=59, second=59)
+                        stmt = stmt.filter(LocationMapping.system_timestamp <= end_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid end_date format. Please use YYYY-MM-DD format."
+                        }
 
             # Handle sentiment_type_id filter
             if kwargs.get('sentiment_type_id') or kwargs.get('sentiment_type_ids'):
@@ -280,7 +476,39 @@ class MetadataService:
                 if 'sentiment_mapping' not in joined_tables:
                     stmt = stmt.join(SentimentMapping, InsightWire.uuid == SentimentMapping.insightwire_uuid)
                     joined_tables.add('sentiment_mapping')
-                stmt = stmt.filter(SentimentMapping.sentiment_type_id == value)       
+                stmt = stmt.filter(SentimentMapping.sentiment_type_id == value)
+                
+                # Apply date filter on sentiment mapping
+                if start_date:
+                    try:
+                        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+                        stmt = stmt.filter(SentimentMapping.system_timestamp >= start_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid start_date format. Please use YYYY-MM-DD format."
+                        }
+                
+                if end_date:
+                    try:
+                        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date = end_date.replace(hour=23, minute=59, second=59)
+                        stmt = stmt.filter(SentimentMapping.system_timestamp <= end_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid end_date format. Please use YYYY-MM-DD format."
+                        }
             
             # Handle source_type_id filter
             if kwargs.get('source_type_id') or kwargs.get('source_type_ids'):
@@ -289,6 +517,38 @@ class MetadataService:
                     stmt = stmt.join(SourceTypeMapping, InsightWire.uuid == SourceTypeMapping.insightwire_uuid)
                     joined_tables.add('source_type_mapping')
                 stmt = stmt.filter(SourceTypeMapping.source_type_id == value)
+                
+                # Apply date filter on source type mapping
+                if start_date:
+                    try:
+                        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+                        stmt = stmt.filter(SourceTypeMapping.system_timestamp >= start_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid start_date format. Please use YYYY-MM-DD format."
+                        }
+                
+                if end_date:
+                    try:
+                        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date = end_date.replace(hour=23, minute=59, second=59)
+                        stmt = stmt.filter(SourceTypeMapping.system_timestamp <= end_date)
+                    except ValueError:
+                        return {
+                            "total_count": 0,
+                            "page": kwargs.get('page', 1),
+                            "limit": kwargs.get('limit', 20),
+                            "prev_page": None,
+                            "next_page": None,
+                            "data": [],
+                            "message": "Invalid end_date format. Please use YYYY-MM-DD format."
+                        }
 
             # Apply other InsightWire table filters dynamically
             for field, value in kwargs.items():

@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Optional
+from datetime import datetime, timedelta
 from api.core.security import verify_api_key
 from api.services.metadata_service import MetadataService
 from util.database import get_async_db
@@ -13,7 +14,7 @@ async def news_insight(
     # uuid: Optional[str] = None, 
     # lead_paragraph: Optional[str] = None,
     # news_url: Optional[str] = None,
-    published_date: Optional[str] = None,
+    # published_date: Optional[str] = None,
     # companies: Optional[str] = None,
     # business_activities: Optional[str] = None,
     # custom_topics: Optional[str] = None,
@@ -33,18 +34,28 @@ async def news_insight(
     sentiment_type_id: Optional[int] = None,
     location_ids: Optional[int] = None,
     company_ids: Optional[int] = None,
-    system_timestamp: Optional[str] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
     page: int = 1,
     limit: int = 20,
     db: AsyncSession = Depends(get_async_db),
     api_key: str = Depends(verify_api_key)
 ):
+    # Set default date range if not provided
+    if not start_date and not end_date:
+        end_date = datetime.now().strftime("%Y-%m-%d")
+        start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+    elif not start_date:
+        start_date = (datetime.strptime(end_date, "%Y-%m-%d") - timedelta(days=30)).strftime("%Y-%m-%d")
+    elif not end_date:
+        end_date = datetime.now().strftime("%Y-%m-%d")
+
     service = MetadataService(db)
     return await service.get_news_insights(
         # uuid=uuid,  
         # lead_paragraph=lead_paragraph,
         # news_url=news_url,
-        published_date=published_date,
+        # published_date=published_date,
         # companies=companies,
         # business_activities=business_activities,
         # custom_topics=custom_topics,
@@ -64,7 +75,8 @@ async def news_insight(
         sentiment_type_id=sentiment_type_id,
         location_ids=location_ids,
         company_ids=company_ids,
-        system_timestamp=system_timestamp,
+        start_date=start_date,
+        end_date=end_date,
         page=page,
         limit=limit
     )
