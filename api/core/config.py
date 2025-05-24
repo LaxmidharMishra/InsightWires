@@ -1,7 +1,8 @@
 # api/core/config.py
 from pydantic_settings import BaseSettings
 from functools import lru_cache
-from typing import List, Optional
+from typing import List, Optional, Dict
+from pydantic import Field, field_validator, ValidationInfo
 
 class Settings(BaseSettings):
     # API Settings
@@ -14,7 +15,7 @@ class Settings(BaseSettings):
     POSTGRES_HOST: str
     POSTGRES_PORT: str
     POSTGRES_DB: str
-    DATABASE_URL: Optional[str] = None  # Make this optional
+    DATABASE_URL: Optional[str] = None
 
     # Security
     SECRET_KEY: str
@@ -28,11 +29,37 @@ class Settings(BaseSettings):
     # CORS
     ALLOWED_ORIGINS: str = "http://localhost:3000"
     
-    # Cache
-    CACHE_TTL: int = 300  # 5 minutes
+    # Cache Configuration
+    CACHE_CONFIG: Dict[str, int] = Field(
+        default={
+            'default_ttl': 300,  # 5 minutes
+            'short_ttl': 60,     # 1 minute
+            'medium_ttl': 300,   # 5 minutes
+            'long_ttl': 3600,    # 1 hour
+            'max_size': 1000
+        },
+        description="Cache configuration settings"
+    )
+    
+    # Legacy cache TTL (will be converted to CACHE_CONFIG)
+    CACHE_TTL: Optional[str] = None
 
     class Config:
         env_file = ".env"
+        case_sensitive = True
+        extra = "ignore"  # Ignore extra fields in environment variables
+
+    @field_validator('CACHE_CONFIG', mode='after')
+    def convert_cache_ttl(cls, v: Dict[str, int], info: ValidationInfo) -> Dict[str, int]:
+        """Convert legacy CACHE_TTL to new CACHE_CONFIG format if present"""
+        if hasattr(info.context, 'CACHE_TTL') and info.context.CACHE_TTL:
+            try:
+                ttl = int(info.context.CACHE_TTL)
+                v['default_ttl'] = ttl
+                v['medium_ttl'] = ttl
+            except (ValueError, TypeError):
+                pass
+        return v
 
     def model_post_init(self, _context):
         # Move the DATABASE_URL construction to post_init
