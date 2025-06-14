@@ -34,6 +34,8 @@ class ResponseSchema(BaseModel):
     published_date: Optional[str]
     news_url: Optional[str]
     image_url: Optional[str]
+    business_activities: Optional[str]
+    industries: Optional[str]
     type_of_content: Optional[str]
     type_of_source: Optional[str]
     sources: Optional[str]
@@ -49,10 +51,10 @@ class MetadataService:
     def _init_filter_mappings(self):
         """Initialize filter mappings for query optimization"""
         self.filter_mappings = {
-            'business_activity': (BusinessActivityMapping, 'business_activity_id'),
+            'business_activities': (BusinessActivityMapping, 'business_activity_id'),
             'company': (CompanyMapping, 'company_id'),
             'content_type': (ContentTypeMapping, 'content_type_id'),
-            'industry': (IndustryMapping, 'industry_type_id'),
+            'industries': (IndustryMapping, 'industry_type_id'),
             'location': (LocationMapping, 'location_id'),
             'sentiment': (SentimentMapping, 'sentiment_type_id'),
             'source_type': (SourceTypeMapping, 'source_type_id')
@@ -101,6 +103,8 @@ class MetadataService:
                 "type_of_content": getattr(item, "type_of_content", None),
                 "type_of_source": getattr(item, "type_of_source", None),
                 "sources": getattr(item, "sources", None),
+                "business_activities": getattr(item, "business_activities", None),
+                "industries": getattr(item, "industries", None),
                 "locations": getattr(item, "locations", None),
                 "content_languages": getattr(item, "content_languages", None),
                 "sentiment": getattr(item, "sentiment", None)

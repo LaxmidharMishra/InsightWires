@@ -21,6 +21,8 @@ class InsightWire(Base):
     locations = Column(Text)
     content_languages = Column(Text)
     image_url = Column(Text)
+    business_activities = Column(Text)
+    industries = Column(Text)
     
     # Relationships
     # business_activities = relationship("BusinessActivityMapping", back_populates="insightwire", cascade="all, delete-orphan")

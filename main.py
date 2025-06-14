@@ -16,9 +16,9 @@ from api.routers import (
     languages_router,
     countries_router,
     sources_router,
-    themes_router,
+    # themes_router,
     topics_router,
-    custom_topics_router,
+    # custom_topics_router,
     content_type_router,
     sentiments_router
 )
@@ -238,9 +238,9 @@ app.include_router(industries_router, prefix=settings.API_V1_STR)
 app.include_router(languages_router, prefix=settings.API_V1_STR)
 app.include_router(countries_router, prefix=settings.API_V1_STR)
 app.include_router(sources_router, prefix=settings.API_V1_STR)
-app.include_router(themes_router, prefix=settings.API_V1_STR)
+# app.include_router(themes_router, prefix=settings.API_V1_STR)
 app.include_router(topics_router, prefix=settings.API_V1_STR)
-app.include_router(custom_topics_router, prefix=settings.API_V1_STR)
+# app.include_router(custom_topics_router, prefix=settings.API_V1_STR)
 app.include_router(content_type_router, prefix=settings.API_V1_STR)
 app.include_router(sentiments_router, prefix=settings.API_V1_STR)
 

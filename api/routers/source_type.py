@@ -4,10 +4,10 @@ from typing import Dict, Any
 from util.taxonomy_reader import taxonomy_reader
 from api.core.security import verify_api_key
 
-router = APIRouter(prefix="/sources", tags=["Sources Category"])
+router = APIRouter(prefix="/sources_type", tags=["Sources"])
 
 @router.get("/")
-async def get_sources(
+async def get_sources_type(
     api_key: str = Depends(verify_api_key)
 ) -> Dict[str, Any]:
     """Get all source type taxonomy data"""
